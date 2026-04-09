@@ -1,0 +1,43 @@
+.red {
+  color: red;
+}
+
+.purple {
+  color: purple;
+}
+.orange {
+  color: orange;
+}
+
+.blue {
+  color: blue;
+}
+
+div {
+  background-color: #f2f9ff;
+  padding: 5px;
+}
+
+.ma {
+  background-color: #c9fffc;
+}
+
+table th,
+td {
+  border: 1px solid #333;
+  padding: 7px;
+  padding-left: 15px;
+}
+table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+ul li a {
+  color: #292929;
+  text-decoration: none;
+}
+
+ul li a:hover {
+  text-decoration: underline;
+}
