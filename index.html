@@ -7,519 +7,530 @@
     <title>Document</title>
   </head>
   <body>
-    <h1>
-      ES2025 JavaScript: Patterns và Libraries Hot Nhất Cho Developer Việt 2026
-    </h1>
-    <h2>ES2025 ra mắt - cái gì thật sự vào spec?</h2>
-    <p>
-      Tháng 6/2025, TC39 chính thức công bố ECMAScript 2025 (ES16). Nếu bạn hay
-      follow Twitter/X dev community, chắc nghe nhiều về pipeline operator hay
-      Temporal API - nhưng cả hai vẫn chưa vào spec. Đừng để bị nhầm.
-    </p>
-    <p>Cái thật sự vào ES2025 gồm 6 nhóm tính năng:</p>
-    <ul>
-      <li>
+    <div class="body">
+      <h1>
+        ES2025 JavaScript: Patterns và Libraries Hot Nhất Cho Developer Việt
+        2026
+      </h1>
+      <h2>ES2025 ra mắt - cái gì thật sự vào spec?</h2>
+      <p>
+        Tháng 6/2025, TC39 chính thức công bố ECMAScript 2025 (ES16). Nếu bạn
+        hay follow Twitter/X dev community, chắc nghe nhiều về pipeline operator
+        hay Temporal API - nhưng cả hai vẫn chưa vào spec. Đừng để bị nhầm.
+      </p>
+      <p>Cái thật sự vào ES2025 gồm 6 nhóm tính năng:</p>
+      <ul>
+        <li>
+          <strong>Iterator Helpers</strong>
+          - global
+          <code class="ma">Iterator</code>
+          object với
+          <code class="ma">map</code>
+          ,
+          <code class="ma">filter</code>
+          ,
+          <code class="ma">take</code>
+          ,
+          <code class="ma">drop</code>
+        </li>
+        <li>
+          <strong>Set Methods</strong>
+          -
+          <code class="ma">union()</code>
+          ,
+          <code class="ma">intersection()</code>
+          ,
+          <code class="ma">difference()</code>
+          ,
+          <code class="ma">symmetricDifference()</code>
+        </li>
+        <li>
+          <strong>Promise.try()</strong>
+          - bắt cả sync lẫn async errors trong một chain
+        </li>
+        <li>
+          <strong>RegExp improvements</strong>
+          - flag
+          <code class="ma">/v</code>
+          ,
+          <code class="ma">RegExp.escape()</code>
+          , duplicate named groups
+        </li>
+        <li>
+          <strong>Import Attributes</strong>
+          -
+          <code class="ma">
+            import data from "./data.json" with { type: "json" }
+          </code>
+        </li>
+        <li>
+          <strong>Float16Array</strong>
+          - typed array 16-bit cho memory-sensitive workloads
+        </li>
+      </ul>
+      <img
+        style="width: 100%"
+        src="https://files.f8.edu.vn/f8-prod/blog_posts/13485/section_0_260323080636_69c0921c0cf292.71514803.png"
+        alt=""
+      />
+      <em>
+        ES2025 tập trung vào iterator, set, và async - không phải pipeline
+        operator như nhiều bài viết nhầm
+      </em>
+      <p>
+        Node.js 22+ và các browser Chrome/Firefox/Safari release sau tháng
+        6/2025 đã support native. Không cần polyfill cho production nếu bạn
+        target môi trường đủ mới.
+      </p>
+      <p>
+        Pipeline operator ("
+        <code class="ma">|></code>
+        ) và Temporal API? Vẫn đang ở Stage 2-3. Dùng Luxon hoặc date-fns cho
+        date/time là lựa chọn thực tế nhất hiện tại.
+      </p>
+      <hr />
+      <h2>Iterator Helpers và Set Methods - dùng thật trong dự án thế nào?</h2>
+      <p>
+        Hai tính năng này mình thấy practical nhất trong ES2025 cho daily work.
+      </p>
+      <p>
         <strong>Iterator Helpers</strong>
-        - global
-        <code class="ma">Iterator</code>
-        object với
-        <code class="ma">map</code>
-        ,
-        <code class="ma">filter</code>
-        ,
-        <code class="ma">take</code>
-        ,
-        <code class="ma">drop</code>
-      </li>
-      <li>
-        <strong>Set Methods</strong>
-        -
-        <code class="ma">union()</code>
-        ,
-        <code class="ma">intersection()</code>
-        ,
-        <code class="ma">difference()</code>
-        ,
-        <code class="ma">symmetricDifference()</code>
-      </li>
-      <li>
-        <strong>Promise.try()</strong>
-        - bắt cả sync lẫn async errors trong một chain
-      </li>
-      <li>
-        <strong>RegExp improvements</strong>
-        - flag
-        <code class="ma">/v</code>
-        ,
-        <code class="ma">RegExp.escape()</code>
-        , duplicate named groups
-      </li>
-      <li>
-        <strong>Import Attributes</strong>
-        -
-        <code class="ma">
-          import data from "./data.json" with { type: "json" }
-        </code>
-      </li>
-      <li>
-        <strong>Float16Array</strong>
-        - typed array 16-bit cho memory-sensitive workloads
-      </li>
-    </ul>
-    <img
-      style="width: 100%"
-      src="https://files.f8.edu.vn/f8-prod/blog_posts/13485/section_0_260323080636_69c0921c0cf292.71514803.png"
-      alt=""
-    />
-    <em>
-      ES2025 tập trung vào iterator, set, và async - không phải pipeline
-      operator như nhiều bài viết nhầm
-    </em>
-    <p>
-      Node.js 22+ và các browser Chrome/Firefox/Safari release sau tháng 6/2025
-      đã support native. Không cần polyfill cho production nếu bạn target môi
-      trường đủ mới.
-    </p>
-    <p>
-      Pipeline operator ("
-      <code class="ma">|></code>
-      ) và Temporal API? Vẫn đang ở Stage 2-3. Dùng Luxon hoặc date-fns cho
-      date/time là lựa chọn thực tế nhất hiện tại.
-    </p>
-    <hr />
-    <h2>Iterator Helpers và Set Methods - dùng thật trong dự án thế nào?</h2>
-    <p>
-      Hai tính năng này mình thấy practical nhất trong ES2025 cho daily work.
-    </p>
-    <p>
-      <strong>Iterator Helpers</strong>
-      giải quyết bài toán bạn từng phải import lodash chỉ để
-      <code>map + filter + slice</code>
-      một mảng lớn. Bây giờ không cần nữa:
-    </p>
-    <div class="code-toolbar">
-      <pre>
-            <code>
-                <span>// Trước ES2025 - load cả mảng vào memory</span>
-                <span class="red">const</span> result<span class="orange">=</span> apiData
-                <span>.</span><span class="purple">filter</span>(<span class="orange">item</span> <span class="red">=></span> <span>item</span><span>.</span><span>active</span><span>)</span>
-                <span>.</span><span class="purple">map</span><span>(</span><span class="orange">item</span> <span class="red">=></span> <span>item</span><span>.</span><span>name</span><span>)</span>
-                <span>.</span><span class="purple">slice</span><span>(</span><span class="blue">0</span><span>,</span> <span class="blue">100</span><span>)</span><span>;</span>
-
-                <span>// ES2025 - lazy evaluation, chỉ xử lý đến khi đủ 100 item</span>
-                <span class="red">const</span> <span>result</span> <span class="orange">=</span> <span>Iterator</span><span>.</span><span class="purple">from</span><span>(</span><span>apiData</span><span>)</span>
-                <span>.</span><span class="purple">filter</span><span>(</span><span class="orange">item</span> <span class="red">=></span> <span>item</span><span>.</span><span>active</span><span>)</span>
-                <span>.</span><span class="purple">map</span><span>(</span><span class="orange">item</span><span class="red"> =></span> <span>item</span><span>.</span><span>name</span><span>)</span>
-                <span>.</span><span class="purple">take</span><span>(</span><span class="blue">100</span><span>)</span>
-                <span>.</span><span class="purple">toArray</span><span>(</span><span>)</span><span>;</span>
-            </code>
-        </pre>
-    </div>
-    <p>
-      Khác biệt quan trọng:
-      <code class="ma">Iterator.from()</code>
-      <strong>lazy</strong>
-      - với mảng 10.000 item nhưng chỉ cần 100 kết quả đầu, nó không xử lý 9.900
-      item còn lại. Lodash chain cũng làm được điều này, nhưng giờ là native.
-    </p>
-    <img
-      style="width: 100%"
-      src="https://files.f8.edu.vn/f8-prod/blog_posts/13485/section_1_260323080703_69c092375aabc3.16191064.png"
-      alt=""
-    />
-    <em style="display: block; text-align: center">
-      Lazy evaluation: chỉ xử lý đúng số item cần thiết, tiết kiệm CPU và memory
-      đáng kể
-    </em>
-    <p>
-      <strong>Set Methods</strong>
-      thì đặc biệt hữu ích cho permission systems hoặc dedup realtime data:
-    </p>
-    <div class="code-toolbar">
-      <pre>
-            <code>
-                <span class="red">const</span> <span>userRoles</span> <span class="red">=</span> <span class="red">new</span> <span>Set</span><span>(</span><span>[</span><span>'</span><span class="blue">admin</span><span>'</span><span>,</span> <span>'</span><span class="blue">editor</span><span>'</span><span>]</span><span>)</span><span>;</span>
-                <span class="red">const</span> <span>requiredRoles</span> <span class="red">=</span> <span class="red">new</span> <span>Set</span><span>(</span><span>[</span><span>'</span><span class="blue">editor</span><span>'</span><span>,</span> <span>'</span><span class="blue">viewer</span><span>'</span><span>]</span><span>)</span><span>;</span>
-
-                <span>// Kiểm tra overlap</span>
-                <span class="red">const</span> <span>hasAccess</span> <span class="red">=</span> <span class="red">!</span>userRoles<span>.</span><span class="purple">intersection</span><span>(</span><span>requiredRoles</span><span>)</span><span>.</span><span>size</span> <span class="red">===</span> <span class="blue">0</span><span>;</span>
-
-                <span>// Chat app: merge messages từ 2 nguồn, không trùng</span>
-                <span class="red">const</span> <span>allMessages</span> <span class="red">=</span> <span>socketMessages</span><span>.</span><span class="purple">union</span><span>(</span><span>cachedMessages</span><span>)</span><span>;</span>
-
-                <span>// Diff để biết message mới</span>
-                <span class="red">const</span> newMessages <span class="red">=</span> socketMessages.<span class="purple">difference</span>(cachedMessages);
-            </code>
-        </pre>
-    </div>
-    <p>
-      Trước đây bạn phải tự viết
-      <code class="ma">[...setA].filter(x => setB.has(x))</code>
-      . Dài, khó đọc, dễ bug. Set methods native clean hơn nhiều và chain được
-      với nhau.
-    </p>
-    <hr />
-    <h2>Promise.try() và async/await patterns nâng cao</h2>
-    <p>Đây là tính năng mình mong nhất trong ES2025. Vấn đề cũ:</p>
-    <div>
-      <pre>
-            <code>
-                // Bug tiềm ẩn: nếu getUser() throw sync, lỗi không bị catch!
-                <span class="red">async function</span> <span class="purple">loadProfile</span>(<span class="orange">id</span>) {
-                <span class="red">return</span> <span class="purple">getUser</span>(id) // sync function, throw không bị catch bởi .catch()
-                .<span class="purple">then</span>(<span class="orange">user</span> <span class="red">=></span> <span class="purple">fetchDetails</span>(user));
-                }
-            </code>
-        </pre>
-    </div>
-    <p>
-      <code class="ma">Promise.try()</code>
-      fix đúng điểm này:
-    </p>
-    <div>
-      <pre>
-            <code>
-                // Promise.try wrap cả sync throw vào promise chain
-                Promise.<span class="purple">try</span>(() => <span class="purple">getUser</span>(id))
-                .<span class="purple">then</span>(<span class="orange">user</span> <span class="red">=></span> <span class="purple">fetchDetails</span>(user))
-                .<span class="purple">catch</span>(<span class="orange">err</span> <span class="red">=></span> <span class="purple">handleError</span>(err)); // bắt được cả sync lẫn async error
-
-            </code>
-        </pre>
-    </div>
-    <strong>
-      Pattern mạnh hơn: kết hợp với async generators cho streaming data
-    </strong>
-    <div>
-      <pre>
-            <code>
-                <span class="red">async function*</span> <span class="purple">streamDashboardData</span>(<span class="orange">endpoint</span>) {
-                    <span class="red">const</span> response <span class="red">= await</span>  Promise.<span class="purple">try</span>(() <span class="red">=></span> <span class="purple">fetch</span>(endpoint));
-                    <span class="red">const</span> reader <span class="red">=</span> response.body.<span class="purple">getReader</span>();
+        giải quyết bài toán bạn từng phải import lodash chỉ để
+        <code>map + filter + slice</code>
+        một mảng lớn. Bây giờ không cần nữa:
+      </p>
+      <div class="code-toolbar">
+        <pre>
+              <code>
+                  <span>// Trước ES2025 - load cả mảng vào memory</span>
+                  <span class="red">const</span> result<span class="orange">=</span> apiData
+                  <span>.</span><span class="purple">filter</span>(<span class="orange">item</span> <span class="red">=></span> <span>item</span><span>.</span><span>active</span><span>)</span>
+                  <span>.</span><span class="purple">map</span><span>(</span><span class="orange">item</span> <span class="red">=></span> <span>item</span><span>.</span><span>name</span><span>)</span>
+                  <span>.</span><span class="purple">slice</span><span>(</span><span class="blue">0</span><span>,</span> <span class="blue">100</span><span>)</span><span>;</span>
   
-                    <span class="red">while</span> (<span class="blue">true</span>) {
-                        <span class="red">const</span> { done, value } <span class="red">= await</span> <span class="purple">reader</span>.read();
-                        <span class="red">if</span> (done) <span class="red">break</span>;
-    
-                        // Dùng Iterator Helpers để transform ngay trên stream
-                        <span class="red">yield*</span> Iterator.<span class="purple">from</span>([value])
-                            .<span class="purple">map</span>(<span class="orange">chunk</span> <span class="red">=></span> <span class="blue">JSON</span>.<span class="purple">parse</span>(<span class="red">new</span> TextDecoder().<span class="purple">decode</span>(chunk)))
-                            .<span class="purple">filter</span>(<span class="orange">data</span> <span class="red">=></span> data.type <span class="red">===</span> '<span class="blue">update</span>');
-                    }
-                }
-
-                // Consume trong component
-                <span class="red">for await</span> (<span class="red">const</span> update <span class="red">of</span> <span class="purple">streamDashboardData</span>('/api/stream')) {
-                    <span class="purple">updateUI</span>(update);
-                }
-            </code>
-        </pre>
-    </div>
-    <img
-      style="width: 100%"
-      src="https://files.f8.edu.vn/f8-prod/blog_posts/13485/section_2_260323080728_69c09250954f10.74211997.png"
-      alt=""
-    />
-    <em style="display: block; text-align: center">
-      Promise.try + async generator = xử lý stream data không bị miss error ở
-      bất kỳ điểm nào
-    </em>
-    <p>
-      <b>Top-level await</b>
-      (ES2022 nhưng hay dùng chung với ES2025 patterns) cũng clean hơn khi kết
-      hợp Set ops:
-    </p>
-    <div>
-      <pre>
-            <code>
-                // module.js - init một lần, share across module
-                <span class="red">const</span> initialPermissions <span class="red">= new</span> Set(<span class="red">await</span> <span class="purple">fetchUserPermissions</span>());
-                <span class="red">const</span> cachedPermissions <span class="red">= new</span> Set(<span class="blue">JSON</span>.<span class="purple">parse</span>(localStorage.<span class="purple">getItem</span>('perms') 
-                <span class="red">??</span> '[]'));
-
-                // Merge, loại bỏ duplicate
-                <span class="red">export const</span> permissions <span class="red">=</span> initialPermissions.<span class="purple">union</span>(cachedPermissions);
-            </code>
-        </pre>
-    </div>
-    <p>
-      Nếu bạn muốn nền tảng JavaScript vững để apply những patterns này ngay,
-      khóa
-      <a class="red" href="https://f8.edu.vn/">JavaScript Pro</a>
-      cover sâu về async/await, closures, và cách JS engine thực sự hoạt động -
-      đủ để đọc ES2025 spec mà hiểu rõ tại sao.
-    </p>
-    <hr />
-    <h2>RxJS vs Zustand - chọn gì cho realtime web app?</h2>
-    <p>
-      Mình sẽ không nói "cái nào tốt hơn" vì câu trả lời phụ thuộc vào loại app
-      bạn đang build.
-    </p>
-    <p>
-      <b>RxJS</b>
-      (
-      <a class="red" href="https://rxjs.dev/" target="_blank">RxJS docs</a>
-      ) là reactive programming library với Observable - phù hợp khi data flow
-      của bạn phức tạp, nhiều nguồn, cần backpressure hay timing control:
-    </p>
-    <div>
-      <pre>
-            <code>
-               <span class="red">import</span> { fromEvent, Subject } <span class="red">from</span> '<span class="blue">rxjs</span>';
-               <span class="red">import</span> { debounceTime, scan, filter } <span class="red">from</span> '<span class="blue">rxjs/operators</span>';
-
-                <span class="red">const</span> socket <span class="red">= new</span> WebSocket(<span class="blue">'wss://api.example.com/live</span>');
-
-                // Stream WebSocket messages, debounce 300ms, accumulate
-                <span class="red">const</span> liveData$ = <span class="purple">fromEvent</span>(socket, 'message').<span class="purple">pipe</span>(
-                    <span class="purple">debounceTime</span>(<span class="blue">300</span>),
-                    <span class="purple">filter</span>(<span class="orange">event</span> <span class="red">=></span> event.data <span class="red">!==</span> 'ping'),
-                    <span class="purple">scan</span>((<span class="orange">acc</span>, <span class="orange">event</span>) <span class="red">=></span> [<span class="red">...</span>acc.<span class="purple">slice</span>(<span class="red">-</span><span class="blue">99</span>), <span class="blue">JSON</span>.<span class="purple">parse</span>(event.data)], []),
-                );
-
-                liveData$.<span class="purple">subscribe</span>(<span class="orange">messages</span> <span class="red">=></span> <span class="purple">updateDashboard</span>(messages));
-            </code>
-        </pre>
-    </div>
-    <p>
-      Zustand (
-      <a class="red" href="https://github.com/pmndrs/zustand">Zustand GitHub</a>
-      ) đi theo hướng ngược lại - minimal, hooks-based, không boilerplate:
-    </p>
-    <div>
-      <pre>
-            <code>
-                <span class="red">import</span> { create } <span class="red">from</span> '<span class="blue">zustand</span>';
-
-                <span class="red">const</span> useChatStore <span class=" red">=</span> <span class="purple">create</span>((<span class="orange">set</span>, <span class="red">get</span>) <span class="red">=></span> ({
-                    messages<span class="red">:</span> [],
-                    connected<span class="red">:</span> <span class="blue">false</span>,
-  
-                    // ES2025 Promise.try trong action
-                    <span class="purple">connectSocket</span><span class="red">: async</span>  (<span class="orange">url</span>) <span class="red">=></span> {
-                        <span class="red">await</span> Promise.<span class="purple">try</span>(<span class="red">async</span> () <span class="red">=></span> {
-                            <span class="red">const</span> ws = new WebSocket(url);
-                            <span class="purple">set</span>({ connected<span class="red">:</span> <span class="blue">true</span> });
-      
-                            ws.<span class="purple">onmessage</span> <span class="red">=</span> (<span class="orange">e</span>) <span class="red">=></span> <span class="purple">set</span>(<span class="orange">state</span> <span class="red">=></span> ({
-                                messages<span class="red">:</span> [<span class="red">...</span>state.messages, <span class="blue">JSON</span>.<span class="purple">parse</span>(e.data)]
-                            }));
-                        });
-                    },
-                }));
-
-                // Trong component
-                <span class="red"><span class="purple">function</span></span> ChatApp() {
-                    <span class="red">const</span> { messages, connectSocket } <span class="red">=</span> <span class="purple">useChatStore</span>();
-                // ...
-                }
-            </code>
-        </pre>
-    </div>
-    <img
-      style="width: 100%"
-      src="https://files.f8.edu.vn/f8-prod/blog_posts/13485/section_3_260323080755_69c0926b837010.27943991.png"
-      alt=""
-    />
-    <em style="text-align: center; display: block">
-      RxJS cho stream phức tạp, Zustand cho React app state - chọn đúng tool cho
-      đúng bài toán
-    </em>
-    <p>Bảng so sánh thực tế:</p>
-    <table>
-      <tr>
-        <th>Tiêu chí</th>
-        <th>RxJS v8.x</th>
-        <th>Zustand v5.x</th>
-      </tr>
-      <tr>
-        <td>Bundle size</td>
-        <td>~50KB</td>
-        <td><2KB</td>
-      </tr>
-      <tr>
-        <td>Learning curve</td>
-        <td>Cao (marble diagrams)</td>
-        <td>Thấp</td>
-      </tr>
-      <tr>
-        <td>Phù hợp cho</td>
-        <td>Multiplayer, live feed, complex streams</td>
-        <td>React SPA, UI state</td>
-      </tr>
-      <tr>
-        <td>ES2025 synergy</td>
-        <td><code>Iterator.from(observable)</code></td>
-        <td>
-          <code>Promise.try</code>
-          trong actions
-        </td>
-      </tr>
-      <tr>
-        <td>TypeScript</td>
-        <td>Tốt</td>
-        <td>Rất tốt (generics cải thiện v5+)</td>
-      </tr>
-    </table>
-    <p>
-      Cho hầu hết React app Việt Nam (dashboard, e-commerce, admin panel) -
-      Zustand là đủ và ít đau đầu hơn. RxJS chỉ worth it khi bạn xây multiplayer
-      game, collaborative editor, hoặc financial live feed cần control timing
-      cực chính xác.
-    </p>
-    <p>
-      Nếu bạn đang build với ReactJS và chưa rõ cách quản lý state từ cơ bản,
-      khóa
-      <a class="red" href="https://f8.edu.vn/">Xây Dựng Website với ReactJS</a>
-      sẽ giúp bạn hiểu đúng từ component state đến context trước khi nhảy vào
-      Zustand.
-    </p>
-    <hr />
-    <h2>Xây realtime dashboard với ES2025 + Zustand: ví dụ thực tế</h2>
-    <p>
-      Mình sẽ ghép tất cả những gì đã nói vào một mini case study: realtime
-      stock price dashboard nhận data qua WebSocket.
-    </p>
-    <p>
-      Download file demo đầy đủ tại đây:
-      <a
-        class="red"
-        href="https://files.f8.edu.vn/f8-prod/blog_posts/13485/realtime-dashboard-es2025.html"
-      >
-        Tải file demo Realtime Dashboard
-      </a>
-    </p>
-    <b>Kiến trúc:</b>
-    \
-    <div>
-      <pre>
-            <code >
-                <span class="ma">WebSocket server</span>
-                  <span class="ma">  ↓</span>
-                <span class="ma">Zustand store (ES2025 Promise.try + Set dedup)</span>
-                  <span class="ma">  ↓</span>
-                <span class="ma">Iterator Helpers (filter/transform)</span>
-                  <span class="ma">  ↓</span>
-                <span class="ma">React components (subscribe minimal)</span>
-            </code>
-        </pre>
-    </div>
-    <b>Store với ES2025 patterns:</b>
-    <div>
-      <pre>
-            <code>
-                <span class="red">import</span> { create } <span class="red">from</span> 'zustand';
-
-                <span class="red">const</span> useStockStore <span class="red">=</span> <span class="purple">create</span>((<span class="orange">set</span>, <span class="red">get</span>)<span class="red"> =></span> ({
-                    prices<span class="red">: new</span>  Map(), // symbol -> latest price
-                    symbols<span class="red">: new</span>  Set(), // active symbols
-  
-                    <span class="purple">subscribeToSymbols</span><span class="red">:</span> <span class="red">async</span> (<span class="orange">newSymbols</span>) <span class="red">=></span> {
-                        <span class="red">const</span> current <span class="red">=</span> <span class="purple">get</span>().symbols;
-                        // Set union - không duplicate
-                        <span class="red">const</span> updated <span class="red">=</span> current.<span class="purple">union</span>(<span class="red">new</span> Set(newSymbols));
-                        <span class="purple">set</span>({ symbols<span class="red">:</span> updated });
-    
-                        // Promise.try bắt cả sync error từ WebSocket init
-                        <span class="red">await</span> Promise.<span class="purple">try</span>(<span class="red">async</span> () <span class="red">=></span> {
-                            <span class="red">const</span> ws <span class="red">= new</span> WebSocket(`<span class="blue">wss://api/stocks?
-                symbols</span>=${[<span class="red">...</span>updated].<span class="purple">join</span>(',')}`);
-      
-                            ws.<span class="purple">onmessage</span> <span class="red">=</span> (<span class="orange">e</span>) <span class="red">=></span> {
-                                <span class="red">const</span> { symbol, price } <span class="red">=</span> <span class="blue">JSON</span>.<span class="purple">parse</span>(e.data);
-                                <span class="purple">set</span>(<span class="orange">state</span> <span class="red">=></span> ({
-                                    prices<span class="red">: new</span>  Map(state.prices).<span class="purple">set</span>(symbol, price)
-                                }));
-                            };
-                        });
-                    },
-  
-                    // Iterator Helpers<span class="red">:</span> lấy top 10 cổ phiếu tăng nhiều nhất
-                    <span class="purple">getTopGainers</span>: (<span class="orange">baseline</span>) <span class="red">=></span> {
-                        <span class="red">return</span> Iterator.<span class="purple">from</span>(<span class="purple">get</span>().prices.<span class="purple">entries</span>())
-                            .<span class="purple">filter</span>((<span class="orange">[, price]</span>) <span class="red">=></span> price <span class="red">></span> (baseline.get(symbol) <span class="red">??</span><span class="blue"> 0</span>))
-                            .<span class="purple">map</span>((<span class="orange">[symbol, price]</span>) <span class="red">=></span> ({ symbol, price }))
-                            .<span class="purple">take</span>(<span class="blue">10</span>)
-                            .<span class="purple">toArray</span>();
-                    },
-                }));
-            </code>
-        </pre>
-    </div>
-    <img
-      style="width: 100%"
-      src="https://files.f8.edu.vn/f8-prod/blog_posts/13485/section_4_260323080825_69c0928991e952.37228671.png"
-      alt=""
-    />
-    <em style="display: block; text-align: center">
-      Zustand store kết hợp ES2025 Set union và Iterator Helpers - ít code hơn,
-      dễ đọc hơn
-    </em>
-    <p>Pattern này cho phép bạn:</p>
-    <ul>
-      <li>
-        Không duplicate symbol khi user thêm subscription nhiều lần (Set.union)
-      </li>
-      <li>Không bị missed error khi WebSocket init fail sync (Promise.try)</li>
-      <li>
-        Chỉ xử lý đúng 10 item cần thiết từ hàng nghìn price entries
-        (Iterator.take)
-      </li>
-    </ul>
-    <p>Bạn đã có đủ building blocks. Bước tiếp:</p>
-    <ol>
-      <li>
-        Cài Node.js 22+ hoặc bật Chrome mới nhất để test native (không cần
-        polyfill)
-      </li>
-      <li>
-        Thêm Zustand vào project React hiện tại, migrate một slice state nhỏ
-        trước
-      </li>
-      <li>
-        Thử
+                  <span>// ES2025 - lazy evaluation, chỉ xử lý đến khi đủ 100 item</span>
+                  <span class="red">const</span> <span>result</span> <span class="orange">=</span> <span>Iterator</span><span>.</span><span class="purple">from</span><span>(</span><span>apiData</span><span>)</span>
+                  <span>.</span><span class="purple">filter</span><span>(</span><span class="orange">item</span> <span class="red">=></span> <span>item</span><span>.</span><span>active</span><span>)</span>
+                  <span>.</span><span class="purple">map</span><span>(</span><span class="orange">item</span><span class="red"> =></span> <span>item</span><span>.</span><span>name</span><span>)</span>
+                  <span>.</span><span class="purple">take</span><span>(</span><span class="blue">100</span><span>)</span>
+                  <span>.</span><span class="purple">toArray</span><span>(</span><span>)</span><span>;</span>
+              </code>
+          </pre>
+      </div>
+      <p>
+        Khác biệt quan trọng:
         <code class="ma">Iterator.from()</code>
-        thay lodash chain trong một data transformation function
-      </li>
-    </ol>
-    <p>Gặp vướng mắc ở phần nào, drop comment xuống dưới - mình đọc hết.</p>
-    <h2>Bài đăng cùng tác giả</h2>
-    <ul>
-      <li>
-        <a
-          href="https://f8.edu.vn/blog/xu-huong-thiet-ke-website-2026-ai-ca-nhan-hoa-va-tuong-tac-3d-dinh-cao"
-        >
-          Thiết Kế Web 2026: AI Cá Nhân Hóa & 3D Tương Tác Thực Chiến
+        <strong>lazy</strong>
+        - với mảng 10.000 item nhưng chỉ cần 100 kết quả đầu, nó không xử lý
+        9.900 item còn lại. Lodash chain cũng làm được điều này, nhưng giờ là
+        native.
+      </p>
+      <img
+        style="width: 100%"
+        src="https://files.f8.edu.vn/f8-prod/blog_posts/13485/section_1_260323080703_69c092375aabc3.16191064.png"
+        alt=""
+      />
+      <em style="display: block; text-align: center">
+        Lazy evaluation: chỉ xử lý đúng số item cần thiết, tiết kiệm CPU và
+        memory đáng kể
+      </em>
+      <p>
+        <strong>Set Methods</strong>
+        thì đặc biệt hữu ích cho permission systems hoặc dedup realtime data:
+      </p>
+      <div class="code-toolbar">
+        <pre>
+              <code>
+                  <span class="red">const</span> <span>userRoles</span> <span class="red">=</span> <span class="red">new</span> <span>Set</span><span>(</span><span>[</span><span>'</span><span class="blue">admin</span><span>'</span><span>,</span> <span>'</span><span class="blue">editor</span><span>'</span><span>]</span><span>)</span><span>;</span>
+                  <span class="red">const</span> <span>requiredRoles</span> <span class="red">=</span> <span class="red">new</span> <span>Set</span><span>(</span><span>[</span><span>'</span><span class="blue">editor</span><span>'</span><span>,</span> <span>'</span><span class="blue">viewer</span><span>'</span><span>]</span><span>)</span><span>;</span>
+  
+                  <span>// Kiểm tra overlap</span>
+                  <span class="red">const</span> <span>hasAccess</span> <span class="red">=</span> <span class="red">!</span>userRoles<span>.</span><span class="purple">intersection</span><span>(</span><span>requiredRoles</span><span>)</span><span>.</span><span>size</span> <span class="red">===</span> <span class="blue">0</span><span>;</span>
+  
+                  <span>// Chat app: merge messages từ 2 nguồn, không trùng</span>
+                  <span class="red">const</span> <span>allMessages</span> <span class="red">=</span> <span>socketMessages</span><span>.</span><span class="purple">union</span><span>(</span><span>cachedMessages</span><span>)</span><span>;</span>
+  
+                  <span>// Diff để biết message mới</span>
+                  <span class="red">const</span> newMessages <span class="red">=</span> socketMessages.<span class="purple">difference</span>(cachedMessages);
+              </code>
+          </pre>
+      </div>
+      <p>
+        Trước đây bạn phải tự viết
+        <code class="ma">[...setA].filter(x => setB.has(x))</code>
+        . Dài, khó đọc, dễ bug. Set methods native clean hơn nhiều và chain được
+        với nhau.
+      </p>
+      <hr />
+      <h2>Promise.try() và async/await patterns nâng cao</h2>
+      <p>Đây là tính năng mình mong nhất trong ES2025. Vấn đề cũ:</p>
+      <div class="code-toolbar">
+        <pre>
+              <code>
+                  // Bug tiềm ẩn: nếu getUser() throw sync, lỗi không bị catch!
+                  <span class="red">async function</span> <span class="purple">loadProfile</span>(<span class="orange">id</span>) {
+                  <span class="red">return</span> <span class="purple">getUser</span>(id) // sync function, throw không bị catch bởi .catch()
+                  .<span class="purple">then</span>(<span class="orange">user</span> <span class="red">=></span> <span class="purple">fetchDetails</span>(user));
+                  }
+              </code>
+          </pre>
+      </div>
+      <p>
+        <code class="ma">Promise.try()</code>
+        fix đúng điểm này:
+      </p>
+      <div class="code-toolbar">
+        <pre>
+              <code>
+                  // Promise.try wrap cả sync throw vào promise chain
+                  Promise.<span class="purple">try</span>(() => <span class="purple">getUser</span>(id))
+                  .<span class="purple">then</span>(<span class="orange">user</span> <span class="red">=></span> <span class="purple">fetchDetails</span>(user))
+                  .<span class="purple">catch</span>(<span class="orange">err</span> <span class="red">=></span> <span class="purple">handleError</span>(err)); // bắt được cả sync lẫn async error
+  
+              </code>
+          </pre>
+      </div>
+      <strong>
+        Pattern mạnh hơn: kết hợp với async generators cho streaming data
+      </strong>
+      <div class="code-toolbar">
+        <pre>
+              <code>
+                  <span class="red">async function*</span> <span class="purple">streamDashboardData</span>(<span class="orange">endpoint</span>) {
+                      <span class="red">const</span> response <span class="red">= await</span>  Promise.<span class="purple">try</span>(() <span class="red">=></span> <span class="purple">fetch</span>(endpoint));
+                      <span class="red">const</span> reader <span class="red">=</span> response.body.<span class="purple">getReader</span>();
+    
+                      <span class="red">while</span> (<span class="blue">true</span>) {
+                          <span class="red">const</span> { done, value } <span class="red">= await</span> <span class="purple">reader</span>.read();
+                          <span class="red">if</span> (done) <span class="red">break</span>;
+      
+                          // Dùng Iterator Helpers để transform ngay trên stream
+                          <span class="red">yield*</span> Iterator.<span class="purple">from</span>([value])
+                              .<span class="purple">map</span>(<span class="orange">chunk</span> <span class="red">=></span> <span class="blue">JSON</span>.<span class="purple">parse</span>(<span class="red">new</span> TextDecoder().<span class="purple">decode</span>(chunk)))
+                              .<span class="purple">filter</span>(<span class="orange">data</span> <span class="red">=></span> data.type <span class="red">===</span> '<span class="blue">update</span>');
+                      }
+                  }
+  
+                  // Consume trong component
+                  <span class="red">for await</span> (<span class="red">const</span> update <span class="red">of</span> <span class="purple">streamDashboardData</span>('/api/stream')) {
+                      <span class="purple">updateUI</span>(update);
+                  }
+              </code>
+          </pre>
+      </div>
+      <img
+        style="width: 100%"
+        src="https://files.f8.edu.vn/f8-prod/blog_posts/13485/section_2_260323080728_69c09250954f10.74211997.png"
+        alt=""
+      />
+      <em style="display: block; text-align: center">
+        Promise.try + async generator = xử lý stream data không bị miss error ở
+        bất kỳ điểm nào
+      </em>
+      <p>
+        <b>Top-level await</b>
+        (ES2022 nhưng hay dùng chung với ES2025 patterns) cũng clean hơn khi kết
+        hợp Set ops:
+      </p>
+      <div class="code-toolbar">
+        <pre>
+              <code>
+                  // module.js - init một lần, share across module
+                  <span class="red">const</span> initialPermissions <span class="red">= new</span> Set(<span class="red">await</span> <span class="purple">fetchUserPermissions</span>());
+                  <span class="red">const</span> cachedPermissions <span class="red">= new</span> Set(<span class="blue">JSON</span>.<span class="purple">parse</span>(localStorage.<span class="purple">getItem</span>('perms') 
+                  <span class="red">??</span> '[]'));
+  
+                  // Merge, loại bỏ duplicate
+                  <span class="red">export const</span> permissions <span class="red">=</span> initialPermissions.<span class="purple">union</span>(cachedPermissions);
+              </code>
+          </pre>
+      </div>
+      <p>
+        Nếu bạn muốn nền tảng JavaScript vững để apply những patterns này ngay,
+        khóa
+        <a class="red" href="https://f8.edu.vn/">JavaScript Pro</a>
+        cover sâu về async/await, closures, và cách JS engine thực sự hoạt động
+        - đủ để đọc ES2025 spec mà hiểu rõ tại sao.
+      </p>
+      <hr />
+      <h2>RxJS vs Zustand - chọn gì cho realtime web app?</h2>
+      <p>
+        Mình sẽ không nói "cái nào tốt hơn" vì câu trả lời phụ thuộc vào loại
+        app bạn đang build.
+      </p>
+      <p>
+        <b>RxJS</b>
+        (
+        <a class="red" href="https://rxjs.dev/" target="_blank">RxJS docs</a>
+        ) là reactive programming library với Observable - phù hợp khi data flow
+        của bạn phức tạp, nhiều nguồn, cần backpressure hay timing control:
+      </p>
+      <div class="code-toolbar">
+        <pre>
+              <code>
+                 <span class="red">import</span> { fromEvent, Subject } <span class="red">from</span> '<span class="blue">rxjs</span>';
+                 <span class="red">import</span> { debounceTime, scan, filter } <span class="red">from</span> '<span class="blue">rxjs/operators</span>';
+  
+                  <span class="red">const</span> socket <span class="red">= new</span> WebSocket(<span class="blue">'wss://api.example.com/live</span>');
+  
+                  // Stream WebSocket messages, debounce 300ms, accumulate
+                  <span class="red">const</span> liveData$ = <span class="purple">fromEvent</span>(socket, 'message').<span class="purple">pipe</span>(
+                      <span class="purple">debounceTime</span>(<span class="blue">300</span>),
+                      <span class="purple">filter</span>(<span class="orange">event</span> <span class="red">=></span> event.data <span class="red">!==</span> 'ping'),
+                      <span class="purple">scan</span>((<span class="orange">acc</span>, <span class="orange">event</span>) <span class="red">=></span> [<span class="red">...</span>acc.<span class="purple">slice</span>(<span class="red">-</span><span class="blue">99</span>), <span class="blue">JSON</span>.<span class="purple">parse</span>(event.data)], []),
+                  );
+  
+                  liveData$.<span class="purple">subscribe</span>(<span class="orange">messages</span> <span class="red">=></span> <span class="purple">updateDashboard</span>(messages));
+              </code>
+          </pre>
+      </div>
+      <p>
+        Zustand (
+        <a class="red" href="https://github.com/pmndrs/zustand">
+          Zustand GitHub
         </a>
-      </li>
-      <li>
-        <a
-          href="https://f8.edu.vn/blog/ai-dang-thay-doi-phat-trien-web-2026-tu-copilot-den-chatbot-tu-dong"
-        >
-          AI Code Thay Developer? Sự Thật Từ Copilot Đến Chatbot
+        ) đi theo hướng ngược lại - minimal, hooks-based, không boilerplate:
+      </p>
+      <div class="code-toolbar">
+        <pre>
+              <code>
+                  <span class="red">import</span> { create } <span class="red">from</span> '<span class="blue">zustand</span>';
+  
+                  <span class="red">const</span> useChatStore <span class=" red">=</span> <span class="purple">create</span>((<span class="orange">set</span>, <span class="red">get</span>) <span class="red">=></span> ({
+                      messages<span class="red">:</span> [],
+                      connected<span class="red">:</span> <span class="blue">false</span>,
+    
+                      // ES2025 Promise.try trong action
+                      <span class="purple">connectSocket</span><span class="red">: async</span>  (<span class="orange">url</span>) <span class="red">=></span> {
+                          <span class="red">await</span> Promise.<span class="purple">try</span>(<span class="red">async</span> () <span class="red">=></span> {
+                              <span class="red">const</span> ws = new WebSocket(url);
+                              <span class="purple">set</span>({ connected<span class="red">:</span> <span class="blue">true</span> });
+        
+                              ws.<span class="purple">onmessage</span> <span class="red">=</span> (<span class="orange">e</span>) <span class="red">=></span> <span class="purple">set</span>(<span class="orange">state</span> <span class="red">=></span> ({
+                                  messages<span class="red">:</span> [<span class="red">...</span>state.messages, <span class="blue">JSON</span>.<span class="purple">parse</span>(e.data)]
+                              }));
+                          });
+                      },
+                  }));
+  
+                  // Trong component
+                  <span class="red"><span class="purple">function</span></span> ChatApp() {
+                      <span class="red">const</span> { messages, connectSocket } <span class="red">=</span> <span class="purple">useChatStore</span>();
+                  // ...
+                  }
+              </code>
+          </pre>
+      </div>
+      <img
+        style="width: 100%"
+        src="https://files.f8.edu.vn/f8-prod/blog_posts/13485/section_3_260323080755_69c0926b837010.27943991.png"
+        alt=""
+      />
+      <em style="text-align: center; display: block">
+        RxJS cho stream phức tạp, Zustand cho React app state - chọn đúng tool
+        cho đúng bài toán
+      </em>
+      <p>Bảng so sánh thực tế:</p>
+      <table>
+        <tr>
+          <th>Tiêu chí</th>
+          <th>RxJS v8.x</th>
+          <th>Zustand v5.x</th>
+        </tr>
+        <tr>
+          <td>Bundle size</td>
+          <td>~50KB</td>
+          <td><2KB</td>
+        </tr>
+        <tr>
+          <td>Learning curve</td>
+          <td>Cao (marble diagrams)</td>
+          <td>Thấp</td>
+        </tr>
+        <tr>
+          <td>Phù hợp cho</td>
+          <td>Multiplayer, live feed, complex streams</td>
+          <td>React SPA, UI state</td>
+        </tr>
+        <tr>
+          <td>ES2025 synergy</td>
+          <td><code>Iterator.from(observable)</code></td>
+          <td>
+            <code>Promise.try</code>
+            trong actions
+          </td>
+        </tr>
+        <tr>
+          <td>TypeScript</td>
+          <td>Tốt</td>
+          <td>Rất tốt (generics cải thiện v5+)</td>
+        </tr>
+      </table>
+      <p>
+        Cho hầu hết React app Việt Nam (dashboard, e-commerce, admin panel) -
+        Zustand là đủ và ít đau đầu hơn. RxJS chỉ worth it khi bạn xây
+        multiplayer game, collaborative editor, hoặc financial live feed cần
+        control timing cực chính xác.
+      </p>
+      <p>
+        Nếu bạn đang build với ReactJS và chưa rõ cách quản lý state từ cơ bản,
+        khóa
+        <a class="red" href="https://f8.edu.vn/">
+          Xây Dựng Website với ReactJS
         </a>
-      </li>
-      <li>
+        sẽ giúp bạn hiểu đúng từ component state đến context trước khi nhảy vào
+        Zustand.
+      </p>
+      <hr />
+      <h2>Xây realtime dashboard với ES2025 + Zustand: ví dụ thực tế</h2>
+      <p>
+        Mình sẽ ghép tất cả những gì đã nói vào một mini case study: realtime
+        stock price dashboard nhận data qua WebSocket.
+      </p>
+      <p>
+        Download file demo đầy đủ tại đây:
         <a
-          href="https://f8.edu.vn/blog/cap-nhat-google-core-february-2026-toi-uu-discover-cho-developer-viet"
+          class="red"
+          href="https://files.f8.edu.vn/f8-prod/blog_posts/13485/realtime-dashboard-es2025.html"
         >
-          Google Core Feb 2026: Discover Ưu Tiên Site Việt Thế Nào?
+          Tải file demo Realtime Dashboard
         </a>
-      </li>
-      <li>
-        <a
-          href="https://f8.edu.vn/blog/progressive-web-apps-pwa-2026-xay-dung-app-web-sieu-nhanh-cho-mobile-viet"
-        >
-          PWA 2026: App Web Nhanh Như Native, Chi Phí Chỉ 1/3
-        </a>
-      </li>
-      <li>
-        <a
-          href="https://f8.edu.vn/blog/motion-ui-micro-interactions-bi-quyet-giu-chan-nguoi-dung-tren-web-2026"
-        >
-          Motion UI giữ chân user: CSS/GSAP thực chiến 2026
-        </a>
-      </li>
-    </ul>
+      </p>
+      <b>Kiến trúc:</b>
+
+      <div class="code-toolbar">
+        <pre>
+              <code >
+                  <span class="ma">WebSocket server</span>
+                    <span class="ma">  ↓</span>
+                  <span class="ma">Zustand store (ES2025 Promise.try + Set dedup)</span>
+                    <span class="ma">  ↓</span>
+                  <span class="ma">Iterator Helpers (filter/transform)</span>
+                    <span class="ma">  ↓</span>
+                  <span class="ma">React components (subscribe minimal)</span>
+              </code>
+          </pre>
+      </div>
+      <b>Store với ES2025 patterns:</b>
+      <div class="code-toolbar">
+        <pre>
+              <code>
+                  <span class="red">import</span> { create } <span class="red">from</span> 'zustand';
+  
+                  <span class="red">const</span> useStockStore <span class="red">=</span> <span class="purple">create</span>((<span class="orange">set</span>, <span class="red">get</span>)<span class="red"> =></span> ({
+                      prices<span class="red">: new</span>  Map(), // symbol -> latest price
+                      symbols<span class="red">: new</span>  Set(), // active symbols
+    
+                      <span class="purple">subscribeToSymbols</span><span class="red">:</span> <span class="red">async</span> (<span class="orange">newSymbols</span>) <span class="red">=></span> {
+                          <span class="red">const</span> current <span class="red">=</span> <span class="purple">get</span>().symbols;
+                          // Set union - không duplicate
+                          <span class="red">const</span> updated <span class="red">=</span> current.<span class="purple">union</span>(<span class="red">new</span> Set(newSymbols));
+                          <span class="purple">set</span>({ symbols<span class="red">:</span> updated });
+      
+                          // Promise.try bắt cả sync error từ WebSocket init
+                          <span class="red">await</span> Promise.<span class="purple">try</span>(<span class="red">async</span> () <span class="red">=></span> {
+                              <span class="red">const</span> ws <span class="red">= new</span> WebSocket(`<span class="blue">wss://api/stocks?
+                  symbols</span>=${[<span class="red">...</span>updated].<span class="purple">join</span>(',')}`);
+        
+                              ws.<span class="purple">onmessage</span> <span class="red">=</span> (<span class="orange">e</span>) <span class="red">=></span> {
+                                  <span class="red">const</span> { symbol, price } <span class="red">=</span> <span class="blue">JSON</span>.<span class="purple">parse</span>(e.data);
+                                  <span class="purple">set</span>(<span class="orange">state</span> <span class="red">=></span> ({
+                                      prices<span class="red">: new</span>  Map(state.prices).<span class="purple">set</span>(symbol, price)
+                                  }));
+                              };
+                          });
+                      },
+    
+                      // Iterator Helpers<span class="red">:</span> lấy top 10 cổ phiếu tăng nhiều nhất
+                      <span class="purple">getTopGainers</span>: (<span class="orange">baseline</span>) <span class="red">=></span> {
+                          <span class="red">return</span> Iterator.<span class="purple">from</span>(<span class="purple">get</span>().prices.<span class="purple">entries</span>())
+                              .<span class="purple">filter</span>((<span class="orange">[, price]</span>) <span class="red">=></span> price <span class="red">></span> (baseline.get(symbol) <span class="red">??</span><span class="blue"> 0</span>))
+                              .<span class="purple">map</span>((<span class="orange">[symbol, price]</span>) <span class="red">=></span> ({ symbol, price }))
+                              .<span class="purple">take</span>(<span class="blue">10</span>)
+                              .<span class="purple">toArray</span>();
+                      },
+                  }));
+              </code>
+          </pre>
+      </div>
+      <img
+        style="width: 100%"
+        src="https://files.f8.edu.vn/f8-prod/blog_posts/13485/section_4_260323080825_69c0928991e952.37228671.png"
+        alt=""
+      />
+      <em style="display: block; text-align: center">
+        Zustand store kết hợp ES2025 Set union và Iterator Helpers - ít code
+        hơn, dễ đọc hơn
+      </em>
+      <p>Pattern này cho phép bạn:</p>
+      <ul>
+        <li>
+          Không duplicate symbol khi user thêm subscription nhiều lần
+          (Set.union)
+        </li>
+        <li>
+          Không bị missed error khi WebSocket init fail sync (Promise.try)
+        </li>
+        <li>
+          Chỉ xử lý đúng 10 item cần thiết từ hàng nghìn price entries
+          (Iterator.take)
+        </li>
+      </ul>
+      <p>Bạn đã có đủ building blocks. Bước tiếp:</p>
+      <ol>
+        <li>
+          Cài Node.js 22+ hoặc bật Chrome mới nhất để test native (không cần
+          polyfill)
+        </li>
+        <li>
+          Thêm Zustand vào project React hiện tại, migrate một slice state nhỏ
+          trước
+        </li>
+        <li>
+          Thử
+          <code class="ma">Iterator.from()</code>
+          thay lodash chain trong một data transformation function
+        </li>
+      </ol>
+      <p>Gặp vướng mắc ở phần nào, drop comment xuống dưới - mình đọc hết.</p>
+      <h2>Bài đăng cùng tác giả</h2>
+      <ul>
+        <li>
+          <a
+            href="https://f8.edu.vn/blog/xu-huong-thiet-ke-website-2026-ai-ca-nhan-hoa-va-tuong-tac-3d-dinh-cao"
+          >
+            Thiết Kế Web 2026: AI Cá Nhân Hóa & 3D Tương Tác Thực Chiến
+          </a>
+        </li>
+        <li>
+          <a
+            href="https://f8.edu.vn/blog/ai-dang-thay-doi-phat-trien-web-2026-tu-copilot-den-chatbot-tu-dong"
+          >
+            AI Code Thay Developer? Sự Thật Từ Copilot Đến Chatbot
+          </a>
+        </li>
+        <li>
+          <a
+            href="https://f8.edu.vn/blog/cap-nhat-google-core-february-2026-toi-uu-discover-cho-developer-viet"
+          >
+            Google Core Feb 2026: Discover Ưu Tiên Site Việt Thế Nào?
+          </a>
+        </li>
+        <li>
+          <a
+            href="https://f8.edu.vn/blog/progressive-web-apps-pwa-2026-xay-dung-app-web-sieu-nhanh-cho-mobile-viet"
+          >
+            PWA 2026: App Web Nhanh Như Native, Chi Phí Chỉ 1/3
+          </a>
+        </li>
+        <li>
+          <a
+            href="https://f8.edu.vn/blog/motion-ui-micro-interactions-bi-quyet-giu-chan-nguoi-dung-tren-web-2026"
+          >
+            Motion UI giữ chân user: CSS/GSAP thực chiến 2026
+          </a>
+        </li>
+      </ul>
+    </div>
   </body>
 </html>
