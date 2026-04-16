@@ -1,0 +1,157 @@
+.site-header .main-nav a {
+  color: #1d4ed8;
+}
+
+.site-header .main-nav ul > li > a {
+  background-color: #1872cb;
+}
+
+.site-main .container h2 + p {
+  color: #64748b;
+}
+.site-main .container h2 ~ p:not(h2 + p) {
+  color: #0f172a;
+}
+
+.post-meta .author a {
+  color: #f97316;
+}
+
+.post {
+  background: white;
+  .post-title {
+    color: #0f172a;
+  }
+  &:hover {
+    background: #185088;
+  }
+  &.featured {
+    background-color: #fefce8;
+  }
+  &:hover .post-title {
+    color: #2563eb;
+  }
+}
+/* ==================link========= */
+.post-content {
+  a {
+    &:link {
+      color: #2563eb;
+    }
+    &:visited {
+      color: #9333ea;
+    }
+    &:hover {
+      color: #1e40af;
+    }
+    &:active {
+      color: #1e3a8a;
+    }
+  }
+}
+/* =============Các nút bấm============ */
+.btn {
+  &.btn-primary {
+    background-color: #2563eb;
+    color: white;
+  }
+  &:hover {
+    background-color: #3b82f6;
+  }
+  &:active {
+    background-color: #1d4ed8;
+  }
+}
+button:disabled {
+  background-color: #94a3b8;
+  color: #cbd5e1;
+}
+
+input:focus {
+  background-color: #fff;
+}
+/* ===================Bảng so sánh============ */
+.comparison-table tbody tr:nth-child(odd) {
+  background-color: #f8fafc;
+}
+.comparison-table tbody tr:nth-child(even) {
+  background-color: white;
+}
+
+.comparison-table thead tr {
+  background-color: #0f172a;
+  color: white;
+}
+
+.comparison-table tbody tr:last-child {
+  background-color: #dbeafe;
+}
+/* =============Danh sách các bước============== */
+.steps li:first-child{
+        color: #16a34a;
+}
+
+.steps li:last-child{
+    color: #dc2626;
+}
+
+.steps li:nth-child(3){
+    background-color: #fef3c7;
+}
+
+/* ===============widget============== */
+.sidebar .widget:not(:last-child){
+    background-color: white;
+}
+
+.post-content{ 
+    .lead::first-line{
+    color: #0f172a;
+    }
+    .lead::first-letter{
+        color: #2563eb;
+    }
+    .quote::before{
+        content: '"';
+        color:#cbd5e1;
+    }
+}
+
+.steps li::marker{
+    color: #2563eb;
+}
+::selection{
+    background-color: #bfdbfe;
+    color: #0f172a;
+}
+.badge::before{
+    content: "";
+    display: inline-block;
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background-color: #ef4444;margin-right: 6px;
+}
+input[required]{
+    background-color: #fffbeb;
+}
+
+a[href^="https://"] {
+  color: #2563eb;
+}
+
+a[href$=".pdf"] {
+  color: #ea580c;
+}
+
+[class*="btn"]{
+    background-color: #e2e8f0;
+}
+
+[lang^="vi"]{
+    color: #0f172a;
+}
+
+tr[data-priority="high"]{
+    background-color: #fee2e2;
+}
