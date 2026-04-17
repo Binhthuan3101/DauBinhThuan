@@ -136,22 +136,22 @@ input[required]{
     background-color: #fffbeb;
 }
 
-a[href^="https://"] {
+.site-main .container a[href^="https://"] {
   color: #2563eb;
 }
 
-a[href$=".pdf"] {
+.site-main .container a[href$=".pdf"] {
   color: #ea580c;
 }
 
-[class*="btn"]{
+.site-main .container [class*="btn"]{
     background-color: #e2e8f0;
 }
 
-[lang^="vi"]{
+.site-main .container [lang^="vi"]{
     color: #0f172a;
 }
 
-tr[data-priority="high"]{
+ .site-main .container tr[data-priority="high"]{
     background-color: #fee2e2;
 }
